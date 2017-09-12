@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
   def self.available_items
     @available_items = []
     self.all.each do |item|
-      if item.inventory >= 1
+      if item.inventory > 0
         @available_items << item
       end
     end
@@ -14,3 +14,4 @@ class Item < ActiveRecord::Base
   end
 
 end
+
